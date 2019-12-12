@@ -1,7 +1,7 @@
 ##LUT Calculation Program
 ##KJ Hansen
 ##Created: 09/05/2019
-#Last edited: 26/09/2019
+#Last edited: 03/12/2019
 
 ##Import required modules
 import os
@@ -33,7 +33,7 @@ def query_yes_no(question, default="yes"):
 
 #Query which charge?
 def query_charge(question, default='2'):
-    valid = {"1": 1, "2": 2, "3": 3, "4": 4, "all": 0}                           ##valid options should be unique peptide.z values
+    valid = {"1": 1, "2": 2, "3": 3, "4": 4, "all": 0}
     prompt = ("Please choose: 1, 2, 3, 4 or all ")
     while True:
         sys.stdout.write(question + prompt)
@@ -69,6 +69,7 @@ print('\n\n\n--------------------LUT Calculator--------------------',
 parser = argparse.ArgumentParser()
 parser.add_argument('-f', help='Filepath to folders containing PLGS outputs (No slashes) (Default = Current Directory)')
 parser.add_argument('-s', help='Name of protein for filename output (optional)')
+parser.add_argument('-l', help='Do not filter peptides (optional)')
 args = parser.parse_args()
 
 ##Set paths to PLGS files
@@ -104,11 +105,12 @@ mt1 = pd.concat(dfs, ignore_index=True, sort=True)
 ##Create ID column
 mt1['peptide.id'] = mt1[['peptide.seq', 'peptide.modification']].apply(lambda x: '-'.join(x.map(str)), axis=1)
 
-#Only green filtered peptides
-mt1 = mt1[mt1['peptide.AutoCurate'] == 'Green']
+##Peptide filtering
+if not args.l:
+    mt1 = mt1[mt1['peptide.AutoCurate'] == 'Green']
 
-##Create table with only mob, m/z, z and ID
-mt1 = mt1[['peptide.id', 'precursor.z', 'precursor.mz', 'precursor.Mobility', 'precursor.inten']].copy()
+##Discard superfluous columns
+mt1 = mt1[['peptide.id', 'precursor.z', 'precursor.mz', 'precursor.Mobility', 'precursor.inten', 'precursor.retT']].copy()
 
 ##Find duplicate entries and average
 mt1 = mt1.groupby('peptide.id').mean().reset_index()
@@ -219,5 +221,5 @@ lut.to_csv(pathout + '_LUT.csv', index=None, header=True)
 ##Endscreen
 print("LUT succesfully calculated:\n" + str(lut))
 print("\n---------------Additional Information----------------\n\n"
-    "\nThe following 3 additional files were created: \n\n" + pathout + "_peptides.csv\n"
+    "\nThe following 3 additional files were saved: \n\n" + pathout + "_peptides.csv\n"
     + pathout + "_regression.png\n" + pathout + "_gradient.png\n")
