@@ -15,6 +15,6 @@ Reference: https://doi.org/10.1021/jasms.9b00133
 
 #### Flag Usage:
 
--f 	folder/folder/folder	'filepath of PLGS ion accounting files (optional)'
--s	protein_name		'name of protein (optional)'
--l  'do not filter peptides (optional)'
+-f 	folder/folder/folder	'filepath of PLGS ion accounting files (optional)'<br>
+-s	protein_name		'name of protein (optional)'<br>
+-l  'do not filter peptides (optional)'<br>
