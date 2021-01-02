@@ -7,11 +7,11 @@ LUT calculator is a python-based program to combine many PLGS ion accounting fil
 
 LUT calculator requirements:
 
-Python 3.0+
+Python 3.0+<br>
 PLGS IA Files
 
 Flag Usage:
 
--f 	folder/folder/folder	'filepath of PLGS ion accounting files (optional)'
--s	protein_name		'name of protein (optional)'
+-f 	folder/folder/folder	'filepath of PLGS ion accounting files (optional)'<br>
+-s	protein_name		'name of protein (optional)'<br>
 -l					'do not filter peptides (optional)'
