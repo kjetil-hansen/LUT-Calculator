@@ -1,21 +1,17 @@
 ##LUT Calculation Program
 ##KJ Hansen
 ##Created: 09/05/2019
-#Last edited: 03/12/2019
+#Last edited: 02/01/2020
 
 ##Import required modules
-import os
-import sys
-import glob
-import argparse
-import pandas as pd
-import numpy as np
+import os, sys, glob, argparse
+import pandas as pd, numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import matplotlib.cbook as cbook
 from scipy import interpolate
 
-###Required Functions
+###Query Functions
 #Query continue
 def query_yes_no(question, default="yes"):
     valid = {"yes": True, "y": True, "ye": True,
@@ -87,12 +83,14 @@ else:
 filenames = glob.glob(path2, recursive=True)
 print('\n' + str(len(filenames)) + ' PLGS files found: \n', *filenames, sep='\n')
 
+
 #Query continue?
 answer = query_yes_no('\nCreate CE LUT using these files?')
 if answer == True:
     print('\nCombining reference files...\n')
 else:
     sys.exit('\nExiting...\n')
+
 
 ##Load PLGS files into dataframes (encoding due to degree symbol not recognised by utf-8)
 dfs = []
@@ -132,7 +130,7 @@ if mt1.empty:
 mt1 = mt1.sort_values(by=['precursor.Mobility'])
 
 ##Calculate Transfer CE
-mt1['transfer.ce'] = (mt1['precursor.mz']*0.034)+8                               #EDIT FORMULA HERE FOR OTHER SYSTEMS!
+mt1['transfer.ce'] = (mt1['precursor.mz']*0.034)+8                               #EDIT FORMULA HERE FOR OTHER MS SYSTEMS!
 
 ##Plot scatter of bins vs CE
 mt1.dropna(inplace=True)                                                         #removes nan values due to csv format
