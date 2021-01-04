@@ -7,6 +7,7 @@ The 'HDX-MS LUT calculator' is a python-based program to be used with hydrogen d
 Reference: https://doi.org/10.1021/jasms.9b00133
 
 ---
+### Usage
 
 #### LUT calculator requirements:
 
@@ -23,7 +24,7 @@ PLGS output files should be placed within the same parent folder of the python s
 
 ---
 
-#### Output
+### Output
 
 After processing PLGS ion accounting files, the LUT calculator will output 4 results files:
 
@@ -34,9 +35,11 @@ After processing PLGS ion accounting files, the LUT calculator will output 4 res
 
 #### Example Outputs
 An example of the linear regression of processed peptides:
-![Linear regression of peptides from LUTCalc](link)
+
+![Linear regression of peptides from LUTCalc](https://github.com/kjetil-hansen/LUT-Calculator/blob/master/Example_Output/LUT_2Charge_regression.png)
 
 An example of a LUT CE gradient:
-![Example LUT CE gradient](link)
+
+![Example LUT CE gradient](https://github.com/kjetil-hansen/LUT-Calculator/blob/master/Example_Output/LUT_2Charge_gradient.png)
 
 Example input and output files are provided.
