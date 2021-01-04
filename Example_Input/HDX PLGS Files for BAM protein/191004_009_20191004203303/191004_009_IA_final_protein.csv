@@ -1,0 +1,2 @@
+protein.key,protein.Entry,protein.Accession,protein.Description,protein.dataBaseType,protein.score,protein.falsePositiveRate,protein.avgMass,protein.MatchedProducts,protein.matchedPeptides,protein.digestPeps,protein.seqCover(%),protein.MatchedPeptideIntenSum,protein.top3MatchedPeptideIntenSum,protein.MatchedProductIntenSum,protein.fmolOnColumn,protein.ngramOnColumn,protein.AutoCurate,protein.Key_ForHomologs
+0,BamABCDE,BamABCDE,Unknown Entry,Regular,30336.5000,0.00,207167.3217,6921,1890,39144,96.44,9.716085E+07,3766644,2.390935E+07,,,Green,

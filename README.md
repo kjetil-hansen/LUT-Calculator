@@ -18,3 +18,25 @@ Reference: https://doi.org/10.1021/jasms.9b00133
 -f 	path/folder	'filepath of PLGS ion accounting files (optional)'<br>
 -s	protein_name		'name of protein (optional)'<br>
 -l  'do not filter peptides (optional)'<br>
+
+PLGS output files should be placed within the same parent folder of the python script. Alternatively, an -f flag can be used.
+
+---
+
+#### Output
+
+After processing PLGS ion accounting files, the LUT calculator will output 4 results files:
+
+- LUT text file (.csv): to be input into the Tune page of a Waters instrument.
+- Table of processed peptides (.csv) with calculated CE values.
+- Image (.png) of LUT CE gradient.
+- Image (.png) of linear regression for processed peptides.
+
+#### Example Outputs
+An example of the linear regression of processed peptides:
+![Linear regression of peptides from LUTCalc](link)
+
+An example of a LUT CE gradient:
+![Example LUT CE gradient](link)
+
+Example input and output files are provided.

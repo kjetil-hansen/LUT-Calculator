@@ -1,0 +1,104 @@
+
+*******************************************************************************
+--------------------------------- IADBs ---------------------------------------
+--------------------- Copyright © 2013 Waters Corporation ---------------------
+Version 2.135.2.0 Compiled: 31/10/2013 13:59
+Run at: 04/10/2019 20:32
+Command Line:
+
+-paraXMLFileName C:\Users\k1629935\AppData\Local\Temp\plgs8364108617359154214.params -pep3DFilename C:\Users\k1629935\AppData\Local\Temp\plgs8364108617359154214.bin -proteinFASTAFileName C:\PLGS3.0.2\dbs\BamABCDE_fromSara.fasta_def -outPutDirName C:\Users\k1629935\AppData\Local\Temp -outputUserDirName C:\Users\k1629935\AppData\Local\Temp -newWorkflowXML -maxCPUs 7
+
+ Parameter XML file:
+<?xml version="1.0" encoding="UTF-8"?>
+<IA_PARAMS>
+    <FASTA_FORMAT VALUE="DEF"/>
+    <PRECURSOR_MHP_WINDOW_PPM VALUE="-1"/>
+    <PRODUCT_MHP_WINDOW_PPM VALUE="-1"/>
+    <NUM_BY_MATCH_FOR_PEPTIDE_MINIMUM VALUE="1"/>
+    <NUM_PEPTIDE_FOR_PROTEIN_MINIMUM VALUE="1"/>
+    <NUM_BY_MATCH_FOR_PROTEIN_MINIMUM VALUE="3"/>
+    <PROTEIN_MASS_MAXIMUM_AMU VALUE="250000"/>
+    <FALSE_POSITIVE_RATE VALUE="100"/>
+    <AQ_PROTEIN_ACCESSION VALUE=""/>
+    <AQ_PROTEIN_MOLES VALUE="-1"/>
+    <MANUAL_RESPONSE_FACTOR VALUE="-1"/>
+    <DIGESTS>
+        <ANALYSIS_DIGESTOR MISSED_CLEAVAGES="0">
+            <AMINO_ACID_SEQUENCE_DIGESTOR NAME="Non-specific" UUID="74e5ecb1-19a3-41d3-8261-ffe98c8dd98e"/>
+        </ANALYSIS_DIGESTOR>
+    </DIGESTS>
+    <MODIFICATIONS/>
+</IA_PARAMS>
+
+
+  Input parameters                                values
+*******************************************************************************
+ Parameter XML file:       "C:\Users\k1629935\AppData\Local\Temp\plgs8364108617359154214.params"
+ Spectrum  Bin File:       "C:\Users\k1629935\AppData\Local\Temp\plgs8364108617359154214.bin"
+ Protein   FAS File:       "C:\PLGS3.0.2\dbs\BamABCDE_fromSara.fasta_def"
+ Output Directory:         "C:\Users\k1629935\AppData\Local\Temp"
+ User Output Directory:    "C:\Users\k1629935\AppData\Local\Temp"
+
+ Instrument Model:   SYNAPTG2-Si
+ Instrument Serial#: UGA430
+ Raw Input File: "F:\191004_009.raw"
+ Acquired Name: "191004_009"
+ Acquired Date: "30-Dec-1899"
+ Acquired Time: "00:00:00"
+ Sample Description: "Normal 100"
+
+Processed by:
+ Apex3D version 2.128.9.0,  compiled: 19/09/2013 processed: 04/10/2019
+    command line: C:\PLGS3.0.2\bin\..\lib\apex3d\Apex3D64.exe -pRawDirName F:\191004_009.raw -outputDirName C:\Users\k1629935\AppData\Local\Temp -lockmassZ1 556.2771 -lockMassToleranceAMU 0.25 -leThresholdCounts 135.0 -heThresholdCounts 30.0 -binIntenThreshold 750 -writeXML 1 -PLGS 1 
+
+ Peptide3D version 2.96.5010.13362,  compiled: 19/09/2013 processed: 04/10/2019
+    command line: C:\PLGS3.0.2\lib\apex3d\Peptide3D.exe -inputFilename C:\Users\k1629935\AppData\Local\Temp\191004_009_Apex3D.bin -outputDirName C:\Users\k1629935\AppData\Local\Temp -minLEMHPlus 350.0
+
+
+Resolution                  = 24335.28
+Precursor MHPlus Window PPM = 4.10926 (set automatically by resolution)
+Product MHPlus Window PPM   = 10.27315 (set automatically by resolution)
+Max MHPlus Window PPM       = 20.5463
+Bin FWHM Fraction           = 0.1428571
+Report homologs             = True
+Min fragments per peptide   = 1
+Min peptides per protein    = 1
+Min fragments per protein   = 3
+Max False positive rate     = 100
+Pass 1 False positive rate  = 100
+Max protein mass            = 250000
+Min ratio by to theoretical = 0.3
+Min sumProdInten/precInten  = 0.03
+Max sumProdInten/precInten  = 1
+Max simultaneous varMods    = 3
+Max CPUs                    = 7
+ScoreFactors                = 1, 9, 3.5, 1, 1.9, 1, 2, 1
+No Pass 2                   = False
+No Pass 3                   = False
+Non-specific Pass           = False
+
+Read 11463 LE ions, 388633 HE ions (388633 binned), 7483 bins in 4.4547382 seconds
+Read 2 proteins in 0.0355945 seconds
+Matched 1473 out of 78288 peptides in digest to 1473 matches in 2  of 2 proteins
+
+Mass Cal Result:
+   Z   OK  Count       Offset        Slope        Error
+   1  Yes    271       -6.208  1.0365e-002  6.7652e-004
+   2  Yes    210       -6.835  1.2573e-002  1.6691e-003
+   3   No     35            0  1.0000e+000  0.0000e+000
+   4   No      4            0  1.0000e+000  0.0000e+000
+   5   No      3            0  1.0000e+000  0.0000e+000
+
+Matched 849 out of 78288 peptides in digest to 849 matches in 2  of 2 proteins
+After Pass1:  1 distraction, 1 regular proteins
+Time to calc all pass2 raw pepScores 00:00:00.0154401
+
+Calibrating AutoCurate Thresholds using 1855 distraction peptides
+Median Random pepScore 5.635263 Std Random pepScore 0.3134629
+Red-Yellow Threshold is 6.42 which is 2.50 stddevs above the mean
+Yellow-Green Threshold is 6.89 which is 4.00 stddevs above the mean
+Median Random raw pepScore 143.3262 Std Random raw pepScore 153.9014
+Time to run pass 2 depletion: 00:00:00.2073905
+After Pass2 Depletion:  1 distraction, 1 regular proteins
+After Filter Proteins:  0 distraction, 1 regular proteins
+Total processing time: 7.0445603 seconds
