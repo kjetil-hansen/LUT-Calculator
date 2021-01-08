@@ -43,3 +43,5 @@ An example of a LUT CE gradient:
 ![Example LUT CE gradient](https://github.com/kjetil-hansen/LUT-Calculator/blob/master/Example_Output/LUT_2Charge_gradient.png)
 
 Example input and output files are provided.
+
+LUT-Calculator by Kjetil Hansen is licensed under CC BY 4.0.
